@@ -1,0 +1,8 @@
+<!-- <p>parent-component to child component data transfer!</p>
+<app-child [item]="parentData"></app-child>
+<br><br>
+<button (click)="updateChild()">Update Child Component</button> -->
+
+<p>child component to parent-component data transfer!</p>
+<p>Fetching Data from Child Component in Parent Component :- </p>
+<app-child (updateDataEvent)="updateData($event)"></app-child>

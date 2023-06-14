@@ -1,0 +1,19 @@
+<h1>Reactive form example</h1>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <input type="text" placeholder="Enter name" name="user" formControlName="user"/>
+  <br>
+    <span style="color: red; font-size: 10px;" *ngIf="userValidator && userValidator.invalid && userValidator.touched">
+      <span *ngIf="userValidator.errors?.['required']">
+        Name is required.
+      </span>
+      <span *ngIf="userValidator.errors?.['email']">
+        Name must be a proper email address.
+      </span>
+    </span>
+  <br>
+  <input type="password" placeholder="Enter password" name="password" formControlName="password"/>
+  <br>
+    <span style="color: red; font-size: 10px;" *ngIf="password && password.invalid && password.touched">Password field is not valid</span>
+  <br>
+<button [disabled]="loginForm.invalid">Login</button>
+</form>

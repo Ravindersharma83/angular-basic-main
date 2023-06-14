@@ -1,0 +1,5 @@
+<p>child component! {{ item }}</p>
+
+<!--child to parent data transfer-->
+<input type="text" #box/>
+<button (click)="updateDataEvent.emit(box.value)">Update Data</button>

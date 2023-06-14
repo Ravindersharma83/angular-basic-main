@@ -1,0 +1,4 @@
+<h2>template-reference-variable works!</h2>
+<input type="text" name="username" #myVariable (keyup)="0" />
+<button (click)="sayhello(myVariable)">Say Hello</button>
+<p>{{myVariable.value}}</p>

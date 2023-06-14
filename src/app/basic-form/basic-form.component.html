@@ -1,0 +1,13 @@
+<h1>basic-form</h1>
+<!--Import FormsModule from angular/forms  in app.module.ts file  -->
+<form #basicForm="ngForm" (ngSubmit)="getData(basicForm.value)">
+  <input type="text" ngModel name="user" placeholder="Enter username"/>
+  <br><br>
+  <input type="text" ngModel name="email" placeholder="Enter email"/>
+  <br><br>
+  <input type="password" ngModel name="password" placeholder="Enter passwordname"/>
+  <br><br>
+  <button>Register</button>
+</form>
+
+<h2 *ngIf="formData.user">Your Enter Name :- {{ formData.user }}</h2>

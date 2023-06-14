@@ -1,0 +1,12 @@
+<h2>Ng Style Directive</h2>
+<ul *ngFor="let item of products">
+    <li [ngStyle]="{color : item.available ? 'Green' : 'Red', 
+                    'background-color' : item.available ? 'lightgreen' : 'pink'
+                }">{{item.name}}</li>
+</ul>
+
+<hr>
+<h2>Ng Class Directive</h2>
+<ul *ngFor="let item of products">
+    <li [ngClass]="{bgColor : !item.available}">{{item.name}}</li>
+</ul>

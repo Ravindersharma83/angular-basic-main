@@ -1,0 +1,16 @@
+<h1>Template Form Example</h1>
+<form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+  <input type="text" #name="ngModel" required pattern="[a-zA-Z]+$" ngModel placeholder="Enter name" name="name"/>
+  <br>
+    <span style="color:red; font-size: 10px;" *ngIf="name.invalid && name.touched">Please Enter Valid Input</span>
+  <br>
+  <input type="text" #email="ngModel" required email ngModel placeholder="Enter Email" name="email"/>
+  <br>
+    <span style="color:red; font-size: 10px;" *ngIf="email.invalid && email.touched">Please Enter Valid Input</span>
+  <br>
+  <input type="password" #password="ngModel" minlength="3" required ngModel placeholder="Enter Password" name="password"/>
+  <br>
+    <span style="color:red; font-size: 10px;" *ngIf="password.invalid && password.touched">Please Enter Valid Input</span>
+  <br>
+  <button [disabled]="loginForm.invalid">Login</button>
+</form>
