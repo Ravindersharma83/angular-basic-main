@@ -8,7 +8,7 @@ import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   // @Input() item:string = '';
-  @Input() item:number = 0; // getting data from parent component
+  @Input() item:number|string = 0; // getting data from parent component
 
   // sending data from child to parent
   @Output() updateDataEvent = new EventEmitter<string>();

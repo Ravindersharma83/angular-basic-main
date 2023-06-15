@@ -6,6 +6,8 @@ import {FormControl,FormGroup,Validators} from '@angular/forms';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
+  
+  submitted = false;
 
   loginForm = new FormGroup({
     user : new FormControl('',[Validators.required,Validators.email]),
@@ -13,6 +15,10 @@ export class ReactiveFormComponent implements OnInit {
   })
 
   loginUser(){
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    }
     console.log(this.loginForm.value);
   }
 
